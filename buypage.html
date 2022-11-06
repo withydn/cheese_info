@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>판매화면</title>
+    <link rel="stylesheet" href="./복붙.css" />
+  </head>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+    crossorigin="anonymous"
+  />
+  <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"
+  ></script>
+  <body>
+    <div class="container">
+      <!-- 버튼 바 -->
+      <div class="button-box">
+        <div class="button">자연치즈</div>
+        <div class="button">가공치즈</div>
+      </div>
+
+      <!-- <input type="button" class="button" value="자연치즈"></input>
+      <input type="button" class="button" value="가공치즈"></input> -->
+
+      <!-- 판매화면구성 -->
+      <article class="buy-container" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <img src="./치즈01.jpg" alt="치즈" class="img img-box" />
+        <a date-target="#modal" data-toggle="modal"></a>
+        <h4 class="text-center">모짜렐라 500g</h4>
+        <h3 class="text-center">9900원</h3>
+      </article>
+
+      <!-- 판매화면 두번째 구성 -->
+      <article class="buy-container" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <img src="./치즈01.jpg" alt="치즈" class="img img-box" />
+        <h4 class="text-center">모짜렐라 500g</h4>
+        <h3 class="text-center">9900원</h3>
+      </article>
+
+      <!-- 모달 구성화면-->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">상세화면</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="out-box">
+                <div class="picture-box">
+                  <img src="./치즈01.jpg" alt="치즈" class="img-box2" />
+                </div>
+                <div class="price-box" id="price-text">
+                  <div class="price-text">이름 : 모짜렐라 500g</div>
+                  <div class="price-text">가격 : 9900원</div>
+                  <input type="button" value="담기" class="buy-button" />
+                </div>
+              </div>
+              <div class="describe-box">
+                <div class="describe-text">상세페이지</div>
+                <div class="describe-text">요리법 : 불에 올리거나 오븐에 넣기 전 기호에 맞게 얹어주기</div>
+                <div class="describe-text">보관법 : 냉장보관 하거나 한 달 이상은 냉동보관 하세요</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

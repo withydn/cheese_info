@@ -1,0 +1,122 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: white;
+}
+
+.container {
+  width: 1200px;
+  background-color: white;
+  margin-left: 1200px- 50%;
+}
+
+.text-center {
+  text-align: center;
+}
+/* 버튼 */
+.button-box {
+  display: flex;
+  width: 100%;
+  height: 70px;
+  padding-left: 500px;
+  background-color: orange;
+}
+
+.button {
+  width: 100px;
+  height: 70px;
+  background-color: orange;
+  color: white;
+  cursor: pointer;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 70px;
+  text-align: center;
+  margin: 0 10px;
+}
+
+.button:hover {
+  background-color: white;
+  color: orange;
+}
+
+/* 중간 판매 화면 */
+.buy-container {
+  width: 250px;
+  height: 350px;
+  border: 1px;
+  cursor: pointer;
+  margin: 50px 50px;
+  border: 1px solid;
+}
+
+.img-box {
+  width: 250px;
+  height: 250px;
+  padding: 10px;
+}
+
+/* 모달 화면 */
+
+.detail-box {
+  width: 800px;
+  height: 800px;
+  background-color: black;
+  animation: scaleUp 1s;
+}
+
+.out-box {
+  display: grid;
+  width: 750px;
+  height: 400px;
+}
+
+/* 모달 사진화면 */
+.picture-box {
+  width: 378px;
+  height: 400px;
+  background-color: white;
+  grid-column: 1/2;
+  border: 1px solid black;
+}
+
+.img-box2 {
+  padding: 50px;
+  width: 100%;
+  height: 100%;
+}
+
+/* 모달 가격 */
+.price-box {
+  width: 387px;
+  height: 400px;
+  background-color: white;
+  grid-column: 2/2;
+  border: 1px solid black;
+}
+
+#price-text {
+  padding: 100px;
+  text-align: center;
+}
+
+.buy-button {
+  cursor: pointer;
+  width: 100px;
+  height: 50px;
+  border-radius: 10px;
+}
+
+/* 모달 상세설명 */
+.describe-box {
+  width: 765px;
+  height: 400px;
+  background-color: white;
+  border: 1px solid black;
+}
+
+.describe-text {
+  text-align: center;
+}
