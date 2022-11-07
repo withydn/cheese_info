@@ -133,6 +133,7 @@ body {
 /* 추가한부분 */
 
 .item-list {
+  min-height: 430px;
   display: grid;
   grid-template-columns: repeat(4, minmax(auto, 1fr));
 }
