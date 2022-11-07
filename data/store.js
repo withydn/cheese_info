@@ -1,6 +1,6 @@
-var open = document.getElementById("open");
-var desc = document.getElementById("desc");
-var close = document.getElementById("close");
+var open = document.querySelector("#open");
+var desc = document.querySelector("#desc");
+var close = document.querySelector("#close");
 
 open.onclick = function () {
   desc.style.display = "block";
