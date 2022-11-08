@@ -1,0 +1,202 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ffd490;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+.container {
+  max-width: 1200px;
+  background-color: white;
+}
+
+/* 헤더 */
+.header {
+  width: 100%;
+  height: 100px;
+  border-bottom: 3px solid orange;
+  background-color: #ffd490;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  z-index: 1;
+}
+
+.header h1 {
+  position: relative;
+}
+
+.header h1 a {
+  color: orange;
+}
+
+.header .sns {
+  display: flex;
+
+  justify-content: space-between;
+}
+
+.header .sns li a {
+  margin: 0.5vw;
+  font-size: 18px;
+}
+/* 버거바  */
+.header .sub_menu {
+}
+.header .sub_menu a {
+  font-size: 30px;
+  color: orange;
+}
+
+.header .sub_menu a i {
+}
+
+/* 버거바 이름 */
+
+#offcanvasRightLabel {
+  padding-top: 30px;
+  padding-left: 30px;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+/* 버거바 내부 메뉴*/
+.offcanvas-body {
+  background-color: #ffd490;
+}
+
+.burger-in {
+  padding-top: 30px;
+  padding-left: 30px;
+  font-size: 30px;
+  font-weight: 700;
+  color: orange;
+}
+
+/* 메인 */
+
+.d-block {
+}
+
+/* 메인 about */
+.about {
+  max-width: 1200px;
+  height: 500px;
+}
+
+.about .about-text {
+  margin-top: 30px;
+  font-size: 50px;
+  text-align: center;
+  font-weight: 700;
+  color: orange;
+  background-color: #ffd490;
+}
+
+/* 뉴스 */
+
+.news-bar {
+  max-width: 1200px;
+  height: 50px;
+  background-color: #ffd490;
+  color: orange;
+  margin-bottom: 30px;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+/* 베스트리뷰 */
+
+.slide_wrapper {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 300px;
+  overflow: hidden;
+}
+
+.slide_wrapper h2 {
+  margin-top: 50px;
+  font-weight: 700;
+  font-size: 30px;
+  color: orange;
+  background-color: #ffd490;
+}
+.slides {
+  position: absolute;
+  left: 0;
+  top: 100px;
+  max-width: 1710px;
+  transition: left 0.5s ease-out;
+}
+
+.slides li {
+  width: 300px;
+  height: 300px;
+}
+
+.slides li img {
+  width: 100%;
+  height: 100%;
+}
+
+.slides li:not(:last-child) {
+  float: left;
+  margin-right: 30px;
+}
+
+.controls {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.controls span {
+  background: #333;
+  color: #fff;
+  padding: 10px 20px;
+  margin: 0 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.controls span.prev2 {
+  right: calc(100%-50px);
+}
+.controls span.next2 {
+}
+
+/* /* 푸터 */
+
+@media screen and (max-width: 1200px) {
+  .header .menu li {
+    margin: 0 1rem;
+    display: none;
+  }
+
+  .header .sub_menu a i {
+    left: 90vw;
+  }
+
+  .header .sub_menu a i {
+    display: block;
+    color: navy;
+  }
+
+  .header h1 {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
