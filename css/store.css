@@ -90,9 +90,13 @@ li {
   margin-bottom: 4px;
 }
 
-.place_popular li .menu #desc {
+.place_popular li .menu .desc {
   display: none;
 }
+
+
+.active {
+  display: block !important;
 
 .place_popular li .menu #desc p {
   display: inline-block;
