@@ -1,12 +1,8 @@
-var open = document.querySelector("#open");
-var desc = document.querySelector("#desc");
-var close = document.querySelector("#close");
+const desc = document.querySelectorAll('.desc');
+const open = document.querySelectorAll('.open');
 
-open.onclick = function () {
-  desc.style.display = "block";
-};
-
-close.onclick = function () {
-  desc.style.display = "none";
-  open.sytle.display = "block";
-};
+open.forEach((item, index) => {
+  item.onclick = () => {
+    desc[index].classList.toggle('active');
+  };
+});

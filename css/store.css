@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Roboto+Condensed:ital@1&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto+Condensed:ital@1&display=swap');
 
 html {
   background-color: #ffd490;
@@ -16,7 +16,7 @@ html {
 header a {
   text-decoration: none;
   color: #fc9b00;
-  font-family: "Lobster";
+  font-family: 'Lobster';
   font-size: 50px;
   padding-left: 20px;
 }
@@ -94,10 +94,6 @@ li {
   display: none;
 }
 
-.place_popular li .menu #desc {
-  display: none;
-}
-
 .place_popular li .menu #desc p {
   display: inline-block;
 
@@ -111,4 +107,9 @@ li {
 }
 
 @media all and (max-width: 800px) {
+}
+
+/* 추가 */
+.active {
+  display: block !important;
 }

@@ -1,0 +1,122 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+body {
+  background-color: #ffd490;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 86px;
+  padding: 80px 16px;
+  background-color: #fffaf2;
+}
+
+.container .inner {
+  width: 100%;
+}
+
+.container .inner h2 {
+}
+
+.container .inner .item-box {
+  margin-top: 48px;
+}
+
+.container .inner .item-box li {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(auto, 1fr));
+  align-items: center;
+  justify-items: stretch;
+  padding: 27px 12px;
+  border-top: 1px solid rgb(153, 153, 153);
+}
+
+.container .inner .item-box li:last-child {
+  border-bottom: 1px solid rgb(153, 153, 153);
+}
+
+.container .inner .item-box .cancel {
+}
+
+.container .inner .item-box li .img-box {
+  width: 250px;
+  height: 250px;
+  margin-right: 70px;
+}
+
+.container .inner .item-box li .img-box .item-img {
+  width: 250px;
+  height: 250px;
+}
+
+.container .inner .item-box .title {
+  justify-self: center;
+}
+
+.container .inner .item-box .price {
+  justify-self: center;
+}
+
+.container .inner .item-box .quantity {
+  justify-self: center;
+}
+
+.container .inner .item-box .sum {
+  justify-self: center;
+}
+
+.container .inner .total {
+  width: 100%;
+  padding-top: 48px;
+  padding-bottom: 48px;
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(153, 153, 153);
+}
+
+.container .inner .total .total-text {
+  font-size: 28px;
+}
+
+.container .inner .total .total-price {
+  font-size: 28px;
+}
+
+.container .inner .btn-buy {
+  width: 80%;
+  height: 64px;
+  margin: 0 auto;
+  margin-top: 48px;
+  color: white;
+  background-color: #724a00;
+  font-size: 28px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .inner .btn-buy:hover {
+  color: #724a00;
+  border: 2px solid #724a00;
+  background-color: #fffaf2;
+}
+
+.container .inner .btn-buy:hover:active {
+  transform: scale(1.02);
+}
