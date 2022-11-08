@@ -11,5 +11,6 @@ open.forEach((item, index) => {
 close.forEach((item, index) => {
   item.onclick = () => {
     desc[index].classList.remove("active");
+
   };
 });
