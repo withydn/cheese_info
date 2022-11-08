@@ -1,12 +1,15 @@
-var open = document.getElementById("open");
-var desc = document.getElementById("desc");
-var close = document.getElementById("close");
+const desc = document.querySelectorAll(".desc");
+const open = document.querySelectorAll(".open");
+const close = document.querySelectorAll(".close");
 
-open.onclick = function () {
-  desc.style.display = "block";
-};
+open.forEach((item, index) => {
+  item.onclick = () => {
+    desc[index].classList.toggle("active");
+  };
+});
 
-close.onclick = function () {
-  desc.style.display = "none";
-  open.sytle.display = "block";
-};
+close.forEach((item, index) => {
+  item.onclick = () => {
+    desc[index].classList.remove("active");
+  };
+});

@@ -90,11 +90,7 @@ li {
   margin-bottom: 4px;
 }
 
-.place_popular li .menu #desc {
-  display: none;
-}
-
-.place_popular li .menu #desc {
+.place_popular li .menu .desc {
   display: none;
 }
 
@@ -110,5 +106,6 @@ li {
   color: #fffaf2;
 }
 
-@media all and (max-width: 800px) {
+.active {
+  display: block !important;
 }
