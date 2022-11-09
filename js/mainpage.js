@@ -5,18 +5,18 @@ var slides = document.querySelector(".slides"),
   slideCount = slide2.length,
   prevBtn = document.querySelector(".prev2"),
   slideWidth = 300,
-  slideMargin = 40,
+  slideMargin = 50,
   nextBtn = document.querySelector(".next2");
 
 slides.style.width = (slideWidth + slideMargin) * slideCount - slideMargin + "px";
 
 function moveSlide(num) {
-  slides.style.left = -num * 340 + "px";
+  slides.style.left = -num * 350 + "px";
   currentIdx = num;
 }
 
 nextBtn.addEventListener("click", function () {
-  if (currentIdx < slideCount - 4) {
+  if (currentIdx < slideCount - 6) {
     moveSlide(currentIdx + 1);
     console.log(currentIdx);
   } else {
@@ -28,6 +28,6 @@ prevBtn.addEventListener("click", function () {
   if (currentIdx > 0) {
     moveSlide(currentIdx - 1);
   } else {
-    moveSlide(slideCount - 4);
+    moveSlide(slideCount - 6);
   }
 });

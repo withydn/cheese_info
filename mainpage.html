@@ -23,8 +23,8 @@
   </head>
   <!-- 헤더 -->
   <body>
-    <div class="container">
-      <header class="header">
+    <div class="container-fluid">
+      <header class="header ">
         <h1><a href="#">What's cheese</a></h1>
         <ul class="sns">
           <li>
@@ -36,7 +36,7 @@
 
           <!-- 헤더  버거바-->
         <div class="sub_menu">
-          <a href="#"><i class="fa-solid fa-bars" style="color: orange"
+          <a href="#" onclick="return false"><i class="fa-solid fa-bars" style="color: orange"
             data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"></i></a>
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
               <div class="offcanvas-header">
@@ -45,10 +45,12 @@
               </div>
               <div class="offcanvas-body">
                 <div class="burger-in"><a href="./login.html">로그인</a></div>
-                <div class="burger-in"><a href="./buypage.html">판매페이지</a></div>
-                <div class="burger-in">치즈의 역사</div>
+
+                <div class="burger-in"><a href="./buypage.html" >판매페이지</a></div>
+                <div class="burger-in"><a href="./history.html" >치즈의 역사</a></div>
+
                 <div class="burger-in"><a href="./store.html">치즈맛집</a></div>
-                <div class="burger-in">장바구니</div>
+                <div class="burger-in"><a href="./cartPage.html" >장바구니</a></div>
               </div>
             </div>
           </div>
@@ -105,28 +107,30 @@
           <div class="row row-cols-1 row-cols-md-3 g-4">
             <div class="col">
               <div class="card h-100">
-                <img src="..." class="card-img-top" alt="...">
+                <img src="./images/이미지/뉴스기사/뉴스1.jpg" class="card-img-top" alt="festival">
                 <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <h5 class="card-title">임실치즈테마파크</h5>
+                  <p class="card-text">22년 10월초부터 치즈로 유명한 전라북도 임실에서 치즈축제가 개최된다. 안심관광지로 성사된 만큼 많은 관광객들이 찾을 것으로 보여진다.</p>
                 </div>
               </div>
             </div>
             <div class="col">
               <div class="card h-100">
-                <img src="..." class="card-img-top" alt="...">
+                <img src="./images/이미지/뉴스기사/뉴스2.jpg" class="card-img-top" alt="cheese">
                 <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                  <h5 class="card-title">쥐는 치즈를 좋아할까?</h5>
+                  <p class="card-text">만화를 보면 쥐는 치즈를 가장 좋아하는 것처럼 보인다. 하지만 실제로도 쥐가 치즈를 가장 좋아할까? 이는 사실이 아니다. 예전에는
+                    치즈는 천대받는 음식으로 보관이 잘 되지 않아 쥐가 찾기 쉬운 먹이였다. 하지만 사실 쥐는 당도가 있는 음식을 좀 더 선호한다.
+                  </p>
                 </div>
               </div>
             </div>
             <div class="col">
               <div class="card h-100">
-                <img src="..." class="card-img-top" alt="...">
+                <img src="./images/이미지/뉴스기사/뉴스3.jpg" class="card-img-top" alt="cheese">
                 <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                  <h5 class="card-title">와인과 치즈의 건강궁합은?</h5>
+                  <p class="card-text">와인과 치즈는 치킨과 맥주처럼 맛의 궁합이 좋은 것으로 알려져있다. 하지만 과학적으로도 궁합이 좋을까? 치즈 안에 들어있는 단백질인 아미노산 메니오닌 성분은 알콜 분해를 도와줌으로 궁합이 좋다.</p>
                 </div>
               </div>
             </div>
@@ -143,6 +147,9 @@
             <li><img src="./images/이미지/베스트리뷰/리뷰4.jpg" alt="cheese" /></li>
             <li><img src="./images/이미지/베스트리뷰/리뷰5.jpg" alt="cheese" /></li>
             <li><img src="./images/이미지/갈릭차이브.jpg" alt="cheese" /></li>
+            <li><img src="./images/이미지/메론망고.jpg" alt="cheese" /></li>
+            <li><img src="./images/이미지/베리치즈.jpg" alt="cheese" /></li>
+            <li><img src="./images/이미지/살구아몬드.jpg" alt="cheese" /></li>
           </ul>
         </div>
         <p class="controls">
@@ -150,7 +157,9 @@
           <span class="next2">next</span>
         </p>
       </main>
+      <footer>
+        <p class="footer-text">@@copy나부랭이@@</p>
+      </footer>
     </div>
-
   </body>
 </html>

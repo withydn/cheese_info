@@ -1,4 +1,26 @@
-* {
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Roboto+Condensed:ital@1&display=swap");
+
+html {
   margin: 0;
   padding: 0;
+  height: 100%;
+}
+
+.about {
+  height: 30vh;
+  padding-left: 50px;
+  background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(243, 240, 240, 0)),
+    url("../images/cheese-background.jpg");
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: 30vw auto;
+}
+
+.about p {
+  font-size: 15px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.h2 {
+  color: #fc9b00;
+  padding-top: 25px;
 }
