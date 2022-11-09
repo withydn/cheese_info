@@ -26,7 +26,7 @@
         <h2>상품</h2>
 
         <div class="filter">
-          <div class="filter-item">all</div>
+          <div class="filter-item clicked">all</div>
           <div class="filter-item">fresh</div>
           <div class="filter-item">soft</div>
           <div class="filter-item">semi-hard</div>
@@ -38,10 +38,14 @@
         </div>
 
         <div class="item-list">
-          <!-- <article class="buy-container" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            <img src="./images/mozzare.jpeg" alt="치즈" class="img img-box" />
-            <h4 class="text-center">모짜렐라 500g</h4>
-            <h3 class="text-center">9900원</h3>
+          <!-- <article class="item-container" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <div class="item-container-header">
+              <img src="./images/blueberry.jpeg" alt="치즈" class="item-img" />
+            </div>
+            <div class="item-container-body">
+              <h4 class="item-title">모짜렐라 500g</h4>
+              <p class="item-price">9900원</p>
+            </div>
           </article> -->
         </div>
       </div>
@@ -49,27 +53,24 @@
       <!-- 모달 구성화면-->
       <div class="modal-container">
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-lg">
+          <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
               <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">상세화면</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                <div class="out-box">
-                  <div class="picture-box">
-                    <img src="" alt="치즈" class="img-box2" />
-                  </div>
-                  <div class="price-box" id="price-text">
-                    <div class="price-text modal-product-title"></div>
-                    <div class="price-text modal-product-price"></div>
-                    <input type="button" value="담기" class="buy-button" />
-                  </div>
+                <div class="modal-item-imgBox">
+                  <img class="modal-item-img" src="./images/almond.jpeg" alt="img" />
                 </div>
-                <div class="describe-box">
-                  <div class="describe-text">상세페이지</div>
-                  <div class="describe-text modal-product-cook"></div>
-                  <div class="describe-text modal-product-keep"></div>
+                <div class="modal-item-text">
+                  <h2 class="modal-item-title"></h2>
+                  <h1 class="modal-item-price"></h1>
+                  <h4>요리방법</h4>
+                  <p class="modal-item-cook"></p>
+                  <h4>보관방법</h4>
+                  <p class="modal-item-keep"></p>
+                  <input type="button" value="담기" class="buy-button" />
                 </div>
               </div>
             </div>
@@ -77,7 +78,6 @@
         </div>
       </div>
     </div>
-
     <script type="module" src="./js/buypage.js"></script>
   </body>
 </html>

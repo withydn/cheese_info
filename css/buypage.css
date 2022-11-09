@@ -15,15 +15,12 @@ body {
 
 .container {
   max-width: 1200px;
+  margin-left: 0 auto;
   margin-top: 86px;
-  margin-left: 1200px- 50%;
   padding: 80px 16px;
   background-color: #fffaf2;
 }
 
-.text-center {
-  text-align: center;
-}
 /* 버튼 */
 .button-box {
   display: flex;
@@ -33,113 +30,20 @@ body {
   background-color: orange;
 }
 
-.button {
-  width: 100px;
-  height: 70px;
-  background-color: orange;
-  color: white;
-  cursor: pointer;
-  font-size: 25px;
-  font-weight: 700;
-  line-height: 70px;
-  text-align: center;
-  margin: 0 10px;
-}
-
-.button:hover {
-  background-color: white;
-  color: orange;
-}
-
-/* 중간 판매 화면 */
-.buy-container {
-  width: 250px;
-  height: 350px;
-  border: 1px;
-  cursor: pointer;
-  margin-top: 80px;
-  border: 1px solid;
-}
-
-.img-box {
-  width: 250px;
-  height: 250px;
-  padding: 10px;
-}
-
-/* 모달 화면 */
-
-.detail-box {
-  width: 800px;
-  height: 800px;
-  background-color: black;
-  animation: scaleUp 1s;
-}
-
-.out-box {
-  display: grid;
-  width: 750px;
-  height: 400px;
-}
-
-/* 모달 사진화면 */
-.picture-box {
-  width: 378px;
-  height: 400px;
-  background-color: white;
-  grid-column: 1/2;
-  border: 1px solid black;
-}
-
-.img-box2 {
-  padding: 50px;
-  width: 100%;
-  height: 100%;
-}
-
-/* 모달 가격 */
-.price-box {
-  width: 387px;
-  height: 400px;
-  background-color: white;
-  grid-column: 2/2;
-  border: 1px solid black;
-}
-
-#price-text {
-  padding: 100px;
-  text-align: center;
-}
-
-.buy-button {
-  cursor: pointer;
-  width: 100px;
-  height: 50px;
-  border-radius: 10px;
-}
-
-/* 모달 상세설명 */
-.describe-box {
-  width: 765px;
-  height: 400px;
-  background-color: white;
-  border: 1px solid black;
-}
-
-.describe-text {
-  text-align: center;
-}
-
 /* 추가한부분 */
 
 .item-list {
   min-height: 430px;
+  margin-top: 80px;
   display: grid;
-  grid-template-columns: repeat(4, minmax(auto, 1fr));
+  grid-template-columns: repeat(3, minmax(auto, 1fr));
+  justify-items: center;
+  gap: 50px;
 }
 
 .filter {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 20px;
@@ -148,5 +52,138 @@ body {
 
 .filter-item {
   cursor: pointer;
+  margin: 3px;
   padding: 5px 12px;
+  border: 2px solid #fc9b00;
+  text-transform: uppercase;
+  color: #fc9b00;
+  transition: all 0.25s ease-in-out;
+  border-radius: 20px;
+}
+
+.filter-item:hover {
+  background-color: #fc9b00;
+  border-color: #fc9b00;
+  color: #fffaf2;
+}
+
+.clicked {
+  background-color: #fc9b00;
+  border-color: #fc9b00;
+  color: #fffaf2;
+}
+
+.item-container {
+  max-height: 360px;
+  width: 300px;
+  margin: 10px;
+  background-color: #fffaf2;
+  border-radius: 10px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.item-container .item-container-header {
+  padding: 0;
+}
+
+.item-container .item-container-header .item-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.item-container .item-container-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  height: 120px;
+}
+
+/* modal css */
+
+.modal-content {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 1000px;
+  /* min-height: 550px; */
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  transition: all 0.3s;
+}
+
+.modal-body {
+  display: flex;
+  align-items: center;
+}
+
+/* modal */
+
+.modal-content:hover {
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.modal-header {
+  border-bottom: 2px solid #efefef;
+}
+
+.modal-item-imgBox {
+  width: 45%;
+  text-align: center;
+}
+.modal-item-img {
+  width: 280px;
+  height: 280px;
+}
+
+.modal-item-text {
+  padding: 30px;
+  float: left;
+  width: 55%;
+  border-left: 2px solid #efefef;
+}
+.modal-item-text h1 {
+  color: #515151;
+  font-weight: 300;
+  padding-top: 15px;
+  margin: 0;
+  font-size: 30px;
+  font-weight: 300;
+}
+.modal-item-text h2 {
+  color: #515151;
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.modal-item-text p {
+  font-size: 12px;
+  line-height: 20px;
+  color: #727272;
+  padding: 20px 0;
+  margin: 0;
+}
+.modal-item-text input {
+  outline: 0;
+  border: 0;
+  background: none;
+  border: 1px solid #d9d9d9;
+  padding: 8px 0px;
+  margin-bottom: 30px;
+  color: #515151;
+  text-transform: uppercase;
+  width: 125px;
+  font-family: inherit;
+  margin-right: 5px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+.modal-item-text input:hover {
+  border: 1px solid #aedaa6;
+  color: #aedaa6;
+  cursor: pointer;
 }
