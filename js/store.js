@@ -1,3 +1,4 @@
+
 const desc = document.querySelectorAll(".desc");
 const open = document.querySelectorAll(".open");
 
@@ -11,5 +12,6 @@ open.forEach((item, index) => {
       open[index].style.transform = "rotate(0deg)";
       open[index].style.color = "black";
     }
+
   };
 });

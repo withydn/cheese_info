@@ -5,15 +5,19 @@ const createProducts = (product) => {
   const itemList = document.querySelector('.item-list');
   const article = document.createElement('article');
 
-  article.classList.add('buy-container');
+  article.classList.add('item-container');
   article.setAttribute('data-bs-toggle', 'modal');
   article.setAttribute('data-bs-target', '#exampleModal');
   article.setAttribute('data-id', `${product.id}`);
 
   const element = `
-  <img src=${product.url} alt="치즈" class="img img-box" />
-  <h4 class="text-center">${product.title}</h4>
-  <h3 class="text-center">${product.price}원</h3>
+  <div class="item-container-header">
+    <img src=${product.url} alt="치즈" class="item-img" />
+  </div>
+  <div class="item-container-body">
+    <h4 class="item-title">${product.title}</h4>
+    <p class="item-price">${product.price} 원</p>
+  </div>
   `;
 
   article.innerHTML = element;
@@ -27,15 +31,15 @@ const renderProducts = (products) => {
 
 // 모달 내용 입력
 const createModals = (product) => {
-  const modalTitle = document.querySelector('.modal-product-title');
-  const modalPrice = document.querySelector('.modal-product-price');
-  const modalCook = document.querySelector('.modal-product-cook');
-  const modalKeep = document.querySelector('.modal-product-keep');
-  const modalImg = document.querySelector('.img-box2');
+  const modalTitle = document.querySelector('.modal-item-title');
+  const modalPrice = document.querySelector('.modal-item-price');
+  const modalCook = document.querySelector('.modal-item-cook');
+  const modalKeep = document.querySelector('.modal-item-keep');
+  const modalImg = document.querySelector('.modal-item-img');
   const btnBuy = document.querySelector('.buy-button');
 
-  modalTitle.textContent = `${product.title}`;
-  modalPrice.textContent = `${product.price}원`;
+  modalTitle.textContent = `${product.title} 치즈`;
+  modalPrice.textContent = `${product.price} 원`;
   modalCook.textContent = `${product.text.cook}`;
   modalKeep.textContent = `${product.text.keep}`;
 
@@ -109,6 +113,8 @@ const filterChange = () => {
 
   options.forEach((option) => {
     option.onclick = (e) => {
+      options.forEach((item) => item.classList.remove('clicked'));
+      e.target.classList.add('clicked');
       const selectedOption = e.target.textContent;
       itemList.innerHTML = '';
 
@@ -119,6 +125,13 @@ const filterChange = () => {
         setTimeRenderProducts(selectedProduct);
       }
     };
+  });
+};
+
+const changeFliterStyle = () => {
+  const options = document.querySelectorAll('.filter-item');
+  options.forEach((option) => {
+    option.onclick = (e) => {};
   });
 };
 
