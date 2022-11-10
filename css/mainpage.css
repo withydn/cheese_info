@@ -43,17 +43,19 @@ li {
 
 .header h1 a {
   color: orange;
+  font-weight: 700;
+  text-decoration: none;
 }
 
 .header .sns {
   display: flex;
-
   justify-content: space-between;
+  margin-top: 20px;
 }
 
 .header .sns li a {
-  margin: 0.5vw;
-  font-size: 18px;
+  font-size: 30px;
+  color: orange;
 }
 /* 버거바  */
 .header .sub_menu {
@@ -64,6 +66,7 @@ li {
 }
 
 .header .sub_menu a i {
+  margin-left: 20px;
 }
 
 /* 버거바 이름 */
@@ -90,6 +93,10 @@ li {
   font-size: 30px;
   font-weight: 700;
   color: orange;
+}
+
+.burger-in a {
+  text-decoration: none;
 }
 
 /* 메인 */
@@ -158,13 +165,16 @@ li {
   position: absolute;
   left: 0;
   top: 120px;
-  max-width: 2970px;
+}
+
+.slides.animated {
   transition: left 0.5s ease-out;
 }
 
 .slides li {
   width: 300px;
   height: 300px;
+  float: left;
 }
 
 .slides li img {
@@ -173,8 +183,7 @@ li {
 }
 
 .slides li:not(:last-child) {
-  float: left;
-  margin-right: 30px;
+  margin-right: 50px;
 }
 
 .controls {
