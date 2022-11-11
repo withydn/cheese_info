@@ -6,7 +6,7 @@ const createList = (item) => {
   const list = document.createElement('li');
   list.setAttribute('id', `${item.id}`);
   list.innerHTML = `
-    <div class="cancel" data-id=${item.id}>x</div>
+    <div class="close-container" data-id=${item.id}>x</div>
     <div class='img-box'><img class='item-img' src=${item.url} alt=${item.title}/></div>
     <div class="title">${item.title}</div>
     <div class="price">${item.price}</div>
@@ -69,7 +69,7 @@ const buttonBuyClick = () => {
 
 // 아이템 제거
 const removeItem = () => {
-  const btnRemove = document.querySelectorAll('.cancel');
+  const btnRemove = document.querySelectorAll('.close-container');
   btnRemove.forEach((item) =>
     item.addEventListener('click', (e) => {
       const storedItem = JSON.parse(localStorage.getItem('cart'));
