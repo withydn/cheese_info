@@ -6,8 +6,8 @@ const createProducts = (product) => {
   const article = document.createElement('article');
 
   article.classList.add('item-container');
-  article.setAttribute('data-bs-toggle', 'modal');
-  article.setAttribute('data-bs-target', '#exampleModal');
+  // article.setAttribute('data-bs-toggle', 'modal');
+  // article.setAttribute('data-bs-target', '#exampleModal');
   article.setAttribute('data-id', `${product.id}`);
 
   const element = `
@@ -15,11 +15,12 @@ const createProducts = (product) => {
     <img src=${product.url} alt="치즈" class="item-img" />
   </div>
   <div class="item-container-body">
-    <h4 class="item-title">${product.title}</h4>
-    <p class="item-price">${product.price} 원</p>
+    <h4 class="item-title">${product.title} 치즈</h4>
+  <div class='hover-box'><span data-bs-toggle="modal" data-bs-target="#exampleModal">MORE</span></div>  
   </div>
-  `;
+    `;
 
+  // <p class="item-price">${product.price} 원</p>
   article.innerHTML = element;
   itemList.appendChild(article);
 };
@@ -33,15 +34,13 @@ const renderProducts = (products) => {
 const createModals = (product) => {
   const modalTitle = document.querySelector('.modal-item-title');
   const modalPrice = document.querySelector('.modal-item-price');
-  const modalCook = document.querySelector('.modal-item-cook');
-  const modalKeep = document.querySelector('.modal-item-keep');
+  const modalDesc = document.querySelector('.modal-item-desc');
   const modalImg = document.querySelector('.modal-item-img');
   const btnBuy = document.querySelector('.buy-button');
 
   modalTitle.textContent = `${product.title} 치즈`;
-  modalPrice.textContent = `${product.price} 원`;
-  modalCook.textContent = `${product.text.cook}`;
-  modalKeep.textContent = `${product.text.keep}`;
+  modalPrice.textContent = `${product.price}원 (${product.weight})`;
+  modalDesc.textContent = `${product.desc}`;
 
   modalImg.setAttribute('src', `${product.url}`);
   btnBuy.setAttribute('data-indexid', `${product.id}`);
