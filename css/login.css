@@ -1,3 +1,19 @@
+/* 내부영어 */
+@font-face {
+  font-family: "Tenada";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/Tenada.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 카테고리 */
+@font-face {
+  font-family: "Happiness-Sans-Title";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/Happiness-Sans-Title.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -28,6 +44,7 @@ form {
 }
 
 form h2 {
+  font-family: "Tenada";
   color: orange;
   text-align: center;
   font-size: 2.5rem;
@@ -43,9 +60,10 @@ form input {
   margin: 20px;
   color: olivedrab;
   height: 30px;
-  width: 60%;
+  width: 70%;
   border-radius: 40px;
   transition: 0.2s ease-in;
+  font-family: "Tenada";
 }
 
 form input[type="text"],
@@ -64,7 +82,7 @@ form input[type="submit"] {
 form input[type="text"]:focus,
 form input[type="Password"]:focus {
   width: 80%;
-  border: solid 2px bisque;
+  border: solid 2px #ffd490;
 }
 
 form input[type="submit"]:hover {
