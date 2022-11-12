@@ -1,26 +1,26 @@
 /* 메인 */
-@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Roboto+Condensed:ital@1&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto+Condensed:ital@1&display=swap');
 
 /* 카테고리 */
 @font-face {
-  font-family: "Happiness-Sans-Title";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/Happiness-Sans-Title.woff2") format("woff2");
+  font-family: 'Happiness-Sans-Title';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/Happiness-Sans-Title.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
 
 /* 내부영어 */
 @font-face {
-  font-family: "Tenada";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/Tenada.woff2") format("woff2");
+  font-family: 'Tenada';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/Tenada.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
 
 /* 내부한글 */
 @font-face {
-  font-family: "Arita-buri-SemiBold";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Arita-buri-SemiBold.woff") format("woff");
+  font-family: 'Arita-buri-SemiBold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Arita-buri-SemiBold.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -34,8 +34,9 @@
 }
 
 body {
-  width: 100%;
   background-color: #ffd490;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
@@ -47,7 +48,7 @@ li {
   list-style: none;
 }
 
-.container {
+.container-fluid {
   width: 100%;
   background-color: white;
 }
@@ -74,7 +75,7 @@ li {
   font-weight: 700;
   font-size: 50px;
   position: relative;
-  font-family: "Lobster";
+  font-family: 'Lobster';
 }
 
 .header h1 a {
@@ -93,6 +94,7 @@ li {
   font-size: 30px;
   color: orange;
 }
+
 /* 버거바  */
 .header .sub_menu {
 }
@@ -114,7 +116,7 @@ li {
 }
 
 #offcanvasRightLabel {
-  font-family: "Lobster";
+  font-family: 'Lobster';
   padding-top: 30px;
   padding-left: 30px;
   font-size: 60px;
@@ -131,7 +133,7 @@ li {
 }
 
 .burger-in {
-  font-family: "Happiness-Sans-Title";
+  font-family: 'Happiness-Sans-Title';
   padding-top: 30px;
   padding-left: 30px;
   font-size: 30px;
@@ -140,28 +142,216 @@ li {
 
 .burger-in a {
   text-decoration: none;
+  display: inline-block;
+  height: 60px;
+  line-height: 60px;
+  padding: 0 10px;
+}
+
+.burger-in a {
+  color: #000;
+  position: relative;
+  text-decoration: none;
+}
+
+.burger-in a::before {
+  background: hsl(45 100% 70%);
+  content: '';
+  inset: 0;
+  position: absolute;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s ease-in-out;
+  z-index: -1;
+}
+
+.burger-in a:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 /* 메인 */
+main {
+  width: 100%;
+}
 /* 캐러셀 */
 .carousel {
-  top: 50px;
-  padding: 50px;
+  position: relative;
+  width: 100%;
+  height: 100vh;
 }
-
+.carousel-inner {
+  width: 100%;
+  height: 100%;
+}
 .d-block {
-  width: 800px;
-  height: 800px;
+  width: 100%;
+  height: 100vh;
+  object-fit: fill;
 }
 
 /* 메인 about */
+
 .about {
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  grid-template-columns: 4fr 4fr 5fr;
+  grid-template-areas: '. . title' 'img img content' 'img img .';
+  width: 100%;
+  height: calc(100vh - 100px);
+  background-color: #f5f5f5;
+}
+
+.about::after {
+  content: '';
+  grid-column: 2/-1;
+  grid-row: 1/3;
+  position: relative;
+  z-index: -1;
+  background: #fff;
+  box-shadow: 0 0.2em 1em rgba(61, 48, 41, 0.2);
+}
+
+.about .about-title {
+  position: relative;
+  font-size: 4em;
+  margin: 0 0 1rem;
+  font-family: serif;
+
+  grid-area: title;
+  padding-top: var(--box-y-padding);
+  padding-left: var(--box-x-padding);
+}
+
+.about .about-title::after {
+  content: '';
+  position: absolute;
+  width: 6rem;
+  background-color: #ccc;
+  height: 2px;
+  left: 3rem;
+  top: 6rem;
+}
+
+.about .content {
+  color: #4d4d4d;
+
+  grid-area: content;
+  padding-bottom: var(--box-y-padding);
+  padding-left: var(--box-x-padding);
+  padding-right: var(--box-x-padding);
+}
+.about-img {
+  grid-area: img;
+}
+
+.content-text {
+  margin-top: 0;
+  margin-bottom: var(--box-y-padding);
+  line-height: 1.5;
+}
+.about .about-img {
+}
+
+.about .about-img img {
+  width: 100%;
+  vertical-align: middle;
+  box-shadow: 0 0.2em 1.2em rgba(61, 48, 41, 0.1);
+}
+
+:root {
+  --box-x-padding: 2rem;
+  --box-y-padding: 2rem;
+}
+@media (min-width: 40em) {
+  :root {
+    --box-y-padding: 4rem;
+  }
+}
+@media (min-width: 60em) {
+  :root {
+    --box-x-padding: 3rem;
+    --box-y-padding: 6rem;
+  }
+}
+@media (min-width: 40em) {
+  /* section {
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    grid-template-columns: 4fr 4fr 5fr;
+    grid-template-areas: '. . title' 'img img content' 'img img .';
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #f5f5f5;
+  } */
+  /* section::after {
+    content: '';
+    grid-column: 2/-1;
+    grid-row: 1/3;
+    position: relative;
+    z-index: -1;
+    background: #fff;
+    box-shadow: 0 0.2em 1em rgba(61, 48, 41, 0.2);
+  } */
+  /* h1 {
+    grid-area: title;
+    padding-top: var(--box-y-padding);
+    padding-left: var(--box-x-padding);
+  } */
+
+  /* .content {
+    grid-area: content;
+    padding-bottom: var(--box-y-padding);
+    padding-left: var(--box-x-padding);
+    padding-right: var(--box-x-padding);
+  }
+  .about-img {
+    grid-area: img;
+  } */
+}
+
+/* h1::after {
+  content: '';
+  position: absolute;
+  width: 6rem;
+  background-color: #ccc;
+  height: 2px;
+  top: 0;
+  left: 0;
+} */
+
+/* @media (min-width: 40em) {
+  h1::after {
+    left: var(--box-x-padding);
+    top: var(--box-y-padding);
+  }
+} */
+
+/* .content {
+  color: #4d4d4d;
+  margin-bottom: var(--box-y-padding);
+} */
+
+/* @media (min-width: 40em) {
+  .content {
+    margin-bottom: 0;
+  }
+} */
+
+/* .content-text {
+  margin-top: 0;
+  margin-bottom: var(--box-y-padding);
+  line-height: 1.5;
+} */
+
+/* .about {
   width: 100%;
   height: 500px;
 }
 
-.about .about-text {
-  font-family: "Tenada";
+.about .about-title {
+  font-family: 'Tenada';
   margin-top: 30px;
   font-size: 50px;
   text-align: center;
@@ -170,10 +360,34 @@ li {
   background-color: white;
 }
 
+.about-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.about-img {
+  width: 90%;
+  padding-left: 50px;
+  background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(243, 240, 240, 0)),
+    url('../images/cheese-background.jpg');
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: 30vw auto;
+} */
+
+/* .h2 {
+  color: #fc9b00;
+  padding-top: 25px;
+} */
+
 /* 뉴스 */
+.news-container {
+  position: relative;
+  width: 100%;
+}
 
 .news-bar {
-  font-family: "Tenada";
+  font-family: 'Tenada';
   width: 100%;
   height: 50px;
   background-color: white;
@@ -183,17 +397,25 @@ li {
   font-weight: 700;
 }
 
+.news {
+  width: 100%;
+}
+
+.row {
+  width: 100%;
+}
+
 .card-img-top {
   max-width: 100%;
   max-height: 400px;
 }
 
 .card-title {
-  font-family: "Arita-buri-SemiBold";
+  font-family: 'Arita-buri-SemiBold';
 }
 
 .card-text {
-  font-family: "Arita-buri-SemiBold";
+  font-family: 'Arita-buri-SemiBold';
 }
 
 /* 베스트리뷰 */
@@ -207,7 +429,7 @@ li {
 }
 
 .slide_wrapper h2 {
-  font-family: "Tenada";
+  font-family: 'Tenada';
   margin-top: 50px;
   font-weight: 700;
   font-size: 40px;

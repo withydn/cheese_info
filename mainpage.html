@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./css/mainpage.css" />
     <script defer src="./js/mainpage.js"></script>
     <script src="https://kit.fontawesome.com/2af2d7ae1b.js" crossorigin="anonymous"></script>
     <link
@@ -20,6 +19,7 @@
       integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
       crossorigin="anonymous"
     ></script>
+    <link rel="stylesheet" href="./css/mainpage.css" />
   </head>
   <!-- 헤더 -->
   <body>
@@ -69,13 +69,13 @@
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="./images/이미지/carousel/carousel1.jpg" class="d-block w-100" alt="cheese" />
+              <img src="./images/carousel/치즈맨1.jpg" class="d-block w-100" alt="cheese" />
             </div>
             <div class="carousel-item">
-              <img src="./images/이미지/carousel/carousel2.jpg" class="d-block w-100" alt="cheese" />
+              <img src="./images/carousel/치즈맨21.jpg" class="d-block w-100" alt="cheese" />
             </div>
             <div class="carousel-item">
-              <img src="./images/이미지/마스카포네ㅐ.jpg" class="d-block w-100" alt="cheese" />
+              <img src="./images/carousel/치즈맨20.jpg" class="d-block w-100" alt="cheese" />
             </div>
           </div>
           <button
@@ -99,49 +99,64 @@
         </div>
 
         <!-- about -->
-        <div class="about">
-          <div class="about-text">ABOUT</div>
-          <div class="about-text-inner"></div>
-        </div>
+
+        <section class="about">
+          <h1 class="about-title">About</h1>
+          <div class="content">
+            <div class="content-text">
+              <div>What's cheese는 치즈에 관련한 간단한 지식과 특별한 치즈 음식이 있는 인기 식당을 알 수 있습니다.</div>
+              <div>또한 다양한 치즈를 온라인으로 확인하고 구매할 수 있습니다.</div>
+              <div>cheese의 다양성과 관련 정보를 안내하는 목적으로 만든 사이트입니다.</div>
+              <div>cheese.in은 치즈에 관련한 간단한 지식과 특별한 치즈 음식이 있는 인기 식당을 알 수 있습니다.</div>
+              <div>또한 다양한 치즈를 온라인으로 확인하고 구매할 수 있습니다.</div>
+              <div>치즈 뉴스부터 치즈 상품의 리뷰까지, 치즈에 관련한 다양한 정보를 만나보세요!</div>
+            </div>
+          </div>
+          <div class="about-img">
+            <img src="../images/cheese-background.jpg" />
+          </div>
+        </section>
 
         <!-- 뉴스 기사 -->
-        <div class="news-bar">CHEESE NEWS</div>
-        <div class="news">
-          <div class="row row-cols-1 row-cols-md-3 g-4">
-            <div class="col">
-              <div class="card h-100" style="border: none">
-                <img src="./images/이미지/뉴스기사/뉴스1.jpg" class="card-img-top" alt="festival" />
-                <div class="card-body">
-                  <h5 class="card-title">임실치즈테마파크</h5>
-                  <p class="card-text">
-                    22년 10월초부터 치즈로 유명한 전라북도 임실에서 치즈축제가 개최된다. 안심관광지로 성사된 만큼 많은
-                    관광객들이 찾을 것으로 보여진다.
-                  </p>
+        <div class="news-container">
+          <div class="news-bar">CHEESE NEWS</div>
+          <div class="news">
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+              <div class="col">
+                <div class="card h-100" style="border: none">
+                  <img src="./images/이미지/뉴스기사/뉴스1.jpg" class="card-img-top" alt="festival" />
+                  <div class="card-body">
+                    <h5 class="card-title">임실치즈테마파크</h5>
+                    <p class="card-text">
+                      22년 10월초부터 치즈로 유명한 전라북도 임실에서 치즈축제가 개최된다. 안심관광지로 성사된 만큼 많은
+                      관광객들이 찾을 것으로 보여진다.
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col">
-              <div class="card h-100" style="border: none">
-                <img src="./images/이미지/뉴스기사/뉴스2.jpg" class="card-img-top" alt="cheese" />
-                <div class="card-body">
-                  <h5 class="card-title">쥐는 치즈를 좋아할까?</h5>
-                  <p class="card-text">
-                    만화를 보면 쥐는 치즈를 가장 좋아하는 것처럼 보인다. 하지만 실제로도 쥐가 치즈를 가장 좋아할까? 이는
-                    사실이 아니다. 예전에는 치즈는 천대받는 음식으로 보관이 잘 되지 않아 쥐가 찾기 쉬운 먹이였다. 하지만
-                    사실 쥐는 당도가 있는 음식을 좀 더 선호한다.
-                  </p>
+              <div class="col">
+                <div class="card h-100" style="border: none">
+                  <img src="./images/이미지/뉴스기사/뉴스2.jpg" class="card-img-top" alt="cheese" />
+                  <div class="card-body">
+                    <h5 class="card-title">쥐는 치즈를 좋아할까?</h5>
+                    <p class="card-text">
+                      만화를 보면 쥐는 치즈를 가장 좋아하는 것처럼 보인다. 하지만 실제로도 쥐가 치즈를 가장 좋아할까?
+                      이는 사실이 아니다. 예전에는 치즈는 천대받는 음식으로 보관이 잘 되지 않아 쥐가 찾기 쉬운 먹이였다.
+                      하지만 사실 쥐는 당도가 있는 음식을 좀 더 선호한다.
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col">
-              <div class="card h-100" style="border: none">
-                <img src="./images/이미지/뉴스기사/뉴스3.jpg" class="card-img-top" alt="cheese" />
-                <div class="card-body">
-                  <h5 class="card-title">와인과 치즈의 건강궁합은?</h5>
-                  <p class="card-text">
-                    와인과 치즈는 치킨과 맥주처럼 맛의 궁합이 좋은 것으로 알려져있다. 하지만 과학적으로도 궁합이 좋을까?
-                    치즈 안에 들어있는 단백질인 아미노산 메니오닌 성분은 알콜 분해를 도와줌으로 궁합이 좋다.
-                  </p>
+              <div class="col">
+                <div class="card h-100" style="border: none">
+                  <img src="./images/이미지/뉴스기사/뉴스3.jpg" class="card-img-top" alt="cheese" />
+                  <div class="card-body">
+                    <h5 class="card-title">와인과 치즈의 건강궁합은?</h5>
+                    <p class="card-text">
+                      와인과 치즈는 치킨과 맥주처럼 맛의 궁합이 좋은 것으로 알려져있다. 하지만 과학적으로도 궁합이
+                      좋을까? 치즈 안에 들어있는 단백질인 아미노산 메니오닌 성분은 알콜 분해를 도와줌으로 궁합이 좋다.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
