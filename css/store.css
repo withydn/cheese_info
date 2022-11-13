@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Roboto+Condensed:ital@1&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto+Condensed:ital@1&display=swap');
 
 html {
   background-color: #ffd490;
@@ -16,7 +16,7 @@ html {
 header a {
   text-decoration: none;
   color: #fc9b00;
-  font-family: "Lobster";
+  font-family: 'Lobster';
   font-size: 50px;
   padding-left: 20px;
 }
@@ -108,10 +108,49 @@ li {
   color: #fffaf2;
 }
 
-@media all and (max-width: 800px) {
-}
-
 /* 추가 */
 .active {
   display: block !important;
+}
+
+@media all and (max-width: 800px) {
+  #container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 30px;
+    text-align: center;
+  }
+  .place {
+    padding: 33px 0 0;
+  }
+  .place_popular {
+    padding: 0 20px;
+  }
+  .place_popular li {
+    display: inline-block;
+    width: 100%;
+    margin: 0%;
+    box-sizing: border-box;
+  }
+  .place_popular.img_place {
+    display: inline-block;
+  }
+  .place_popular li:first-child {
+    border-top: none;
+    padding-top: 0;
+  }
+  .place_popular li .menu .desc {
+    display: none;
+  }
+  .place_popular span {
+    display: inline;
+    font-size: 15px;
+  }
+  .Restraurnat_MenuItem {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+    padding-right: 15%;
+    padding-left: 40px;
+  }
 }
