@@ -1,29 +1,32 @@
 'use strict';
 
-// 카트리스트 html 생성
+// element 생성
 const createList = (item) => {
   const itemBox = document.querySelector('.item-box');
-  const list = document.createElement('li');
-  list.setAttribute('id', `${item.id}`);
-  list.innerHTML = `
-    <div class="close-container" data-id=${item.id}>x</div>
-    <div class='img-box'><img class='item-img' src=${item.url} alt=${item.title}/></div>
-    <div class="title">${item.title}</div>
-    <div class="price">${item.price}</div>
-    <div class="quantity">${item.quantity}</div>
-    <div class="sum">${item.price * item.quantity}</div>
+  const tr = document.createElement('tr');
+  tr.setAttribute('id', `${item.id}`);
+  tr.innerHTML = `
+    <td class="title">${item.title}</td>
+    <td class="quantity">${item.quantity}</td>
+    <td><span class="price">${item.price}</span></td>
+    <td><i data-id=${item.id} class="fa-solid fa-trash-can close-container"></i></td>
   `;
-  itemBox.appendChild(list);
+  itemBox.appendChild(tr);
 };
 
-// 리스트 비우기
+// element 제거
+const deleteList = (selectedId) => {
+  const listId = document.getElementById(selectedId);
+  listId.remove();
+  getTotalPrice();
+};
+
+// empty list
 const createEmptyList = () => {
-  const totalbox = document.querySelector('.total');
   const totalElement = document.querySelector('.total-price');
   const itemBox = document.querySelector('.item-box');
   itemBox.innerHTML = ``;
   totalElement.textContent = `0 원`;
-  totalbox.style.borderTop = '1px solid rgb(153,153,153)';
 };
 
 // 카트리스트 보여주기
@@ -33,7 +36,7 @@ const renderCartList = () => {
   if (getStoredItems === null) {
     createEmptyList();
   } else {
-    const mapped = getStoredItems.map((item) => {
+    getStoredItems.forEach((item) => {
       createList(item);
     });
   }
@@ -43,13 +46,14 @@ const renderCartList = () => {
 const getTotalPrice = () => {
   const totalElement = document.querySelector('.total-price');
   const getStoredItems = JSON.parse(localStorage.getItem('cart'));
+
   if (getStoredItems !== null) {
     const totalPrice = getStoredItems.reduce((acc, cur) => {
       return acc + cur.price * cur.quantity;
     }, 0);
     totalElement.textContent = `${totalPrice} 원`;
   } else {
-    createEmptyList();
+    totalElement.textContent = `0 원`;
   }
 };
 
@@ -75,6 +79,7 @@ const removeItem = () => {
       const storedItem = JSON.parse(localStorage.getItem('cart'));
       const dataId = e.target.dataset.id;
       const filteredItem = storedItem.filter((item) => item.id !== Number(dataId));
+
       if (filteredItem.length === 0) {
         console.log('click1');
         localStorage.setItem('cart', null);
@@ -82,16 +87,24 @@ const removeItem = () => {
         console.log('click2');
         localStorage.setItem('cart', JSON.stringify(filteredItem));
       }
-
-      const listId = document.getElementById(`${dataId}`);
-      listId.remove();
-      getTotalPrice();
+      deleteList(dataId);
     })
   );
+};
+
+// order-date
+const createOrderDate = () => {
+  const calendar = new Date();
+  const currentYear = calendar.getFullYear();
+  const currentMonth = calendar.getMonth() + 1;
+  const currentDate = calendar.getDate();
+  const orderDate = document.querySelector('.order-date');
+  orderDate.textContent = `${currentMonth} / ${currentDate} / ${currentYear}`;
 };
 
 //실행
 renderCartList();
 getTotalPrice();
 buttonBuyClick();
+createOrderDate();
 removeItem();
