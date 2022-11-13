@@ -1,3 +1,30 @@
+/* 메인 */
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto+Condensed:ital@1&display=swap');
+
+/* 카테고리 */
+@font-face {
+  font-family: 'Happiness-Sans-Title';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/Happiness-Sans-Title.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 내부영어 */
+@font-face {
+  font-family: 'Tenada';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/Tenada.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 내부한글 */
+@font-face {
+  font-family: 'Arita-buri-SemiBold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Arita-buri-SemiBold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -9,10 +36,6 @@ ul {
   list-style: none;
 }
 
-body {
-  background-color: #ffd490;
-}
-
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -21,99 +44,288 @@ body {
   background-color: #fffaf2;
 }
 
-.container .inner {
+/* 헤더 */
+.header {
+  position: fixed;
   width: 100%;
-}
-
-.container .inner h2 {
-}
-
-.container .inner .item-box {
-  margin-top: 48px;
-}
-
-.container .inner .item-box li {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(6, minmax(auto, 1fr));
-  align-items: center;
-  justify-items: stretch;
-  padding: 27px 12px;
-  border-top: 1px solid rgb(153, 153, 153);
-}
-
-.container .inner .item-box li:last-child {
-  border-bottom: 1px solid rgb(153, 153, 153);
-}
-
-.container .inner .item-box li .img-box {
-  width: 250px;
-  height: 250px;
-  margin-right: 70px;
-}
-
-.container .inner .item-box li .img-box .item-img {
-  width: 250px;
-  height: 250px;
-}
-
-.container .inner .item-box .title {
-  justify-self: center;
-}
-
-.container .inner .item-box .price {
-  justify-self: center;
-}
-
-.container .inner .item-box .quantity {
-  justify-self: center;
-}
-
-.container .inner .item-box .sum {
-  justify-self: center;
-}
-
-.container .inner .total {
-  width: 100%;
-  padding-top: 48px;
-  padding-bottom: 48px;
+  height: 86px;
+  top: 0;
+  border-bottom: 3px solid orange;
+  background-color: white;
   display: flex;
-  text-align: center;
   justify-content: space-between;
-  border-bottom: 1px solid rgb(153, 153, 153);
-}
-
-.container .inner .total .total-text {
-  font-size: 28px;
-}
-
-.container .inner .total .total-price {
-  font-size: 28px;
-}
-
-.container .inner .btn-buy {
-  width: 80%;
-  height: 64px;
-  margin: 0 auto;
-  margin-top: 48px;
-  color: white;
-  background-color: #724a00;
-  font-size: 28px;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: all 0.3s;
-
-  display: flex;
-  justify-content: center;
   align-items: center;
+  padding: 2rem;
+  z-index: 9999;
 }
 
-.container .inner .btn-buy:hover {
-  color: #724a00;
-  border: 2px solid #724a00;
+.header h1 {
+  font-weight: 700;
+  font-size: 50px;
+  position: relative;
+  font-family: 'Lobster';
+}
+
+.header h1 a {
+  color: orange;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.header .sns {
+  display: flex;
+  margin-top: 20px;
+  margin-inline-start: auto;
+}
+
+.header .sns li a {
+  font-size: 30px;
+  color: orange;
+}
+
+/* 버거바  */
+.header .sub_menu {
+}
+.header .sub_menu a {
+  font-size: 30px;
+  color: #392300;
+}
+
+.header .sub_menu a:hover {
+}
+
+.header .sub_menu a i {
+  margin-left: 20px;
+}
+
+/* 버거바 이름 */
+#offcanvasRight {
+  /* margin-top: 600px; */
+}
+
+#offcanvasRightLabel {
+  font-family: 'Lobster';
+  padding-top: 30px;
+  padding-left: 30px;
+  font-size: 60px;
+  font-weight: 700;
+  color: orange;
+}
+
+/* 버거바 내부 메뉴*/
+.offcanvas-header {
+}
+
+.offcanvas-body {
+  z-index: 2;
+}
+
+.burger-in {
+  font-family: 'Happiness-Sans-Title';
+  padding-top: 30px;
+  padding-left: 30px;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.burger-in a {
+  text-decoration: none;
+  display: inline-block;
+  height: 60px;
+  line-height: 60px;
+  padding: 0 10px;
+}
+
+.burger-in a {
+  color: #000;
+  position: relative;
+  text-decoration: none;
+}
+
+.burger-in a::before {
+  background: hsl(45 100% 70%);
+  content: '';
+  inset: 0;
+  position: absolute;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s ease-in-out;
+  z-index: -1;
+}
+
+.burger-in a:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+/* receipt */
+.receipt_wrap h1 {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  border-bottom: dashed 4px #666;
+  padding-bottom: 30px;
+  font-size: 4vw;
+}
+
+/* Design Areas */
+body {
+  background-color: #ffd490;
+  color: #555;
+  font-family: 'Tenada';
+  font-weight: 300;
+  font-size: 20px;
+}
+
+.receipt_wrap {
   background-color: #fffaf2;
+  width: 700px;
+  padding: 50px;
+  position: relative;
+  margin: 86px auto;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.2);
 }
 
-.container .inner .btn-buy:hover:active {
-  transform: scale(1.02);
+.info div {
+  display: flex;
+  margin: 10px 0;
 }
+
+.info dt {
+  width: 30%;
+}
+
+.info dd {
+  width: 70%;
+  text-align: right;
+}
+
+.price:after {
+  content: '원';
+}
+
+/* main */
+main {
+  border-top: dotted 4px #aaa;
+  border-bottom: dotted 4px #aaa;
+  padding: 20px 0;
+}
+main table {
+  width: 100%;
+}
+main table col:first-child {
+  width: 50%;
+}
+main table col:nth-child(2) {
+  width: 20%;
+}
+main table col:nth-child(3) {
+  width: 10%;
+}
+main table col:last-child {
+  width: 20%;
+}
+main table th {
+  text-align: center;
+}
+main table th:first-child {
+  text-align: left;
+}
+main table td {
+  text-align: center;
+  padding: 10px 0;
+}
+main table td:first-child {
+  text-align: left;
+}
+main i {
+  color: orange;
+}
+/* footer */
+.reciept-footer .total {
+  border-top: dashed 4px #666;
+  border-bottom: dashed 4px #666;
+  padding: 20px;
+}
+.reciept-footer .total h2 {
+  font-size: 3vw;
+}
+.reciept-footer .total dt {
+  width: 40%;
+  text-align: right;
+  margin-right: 20px;
+}
+.reciept-footer .total dd {
+  width: 50%;
+  text-align: left;
+  margin-left: 30px;
+}
+.reciept-footer .greeting {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.btn-buy {
+  position: relative;
+  width: 100px;
+  height: 50px;
+  text-align: center;
+  left: 50%;
+  line-height: 50px;
+  transform: translateX(-50%);
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.65, -0.25, 0.25, 1.95);
+  color: #555;
+  border: dotted 4px #aaa;
+  margin: 30px 0;
+}
+
+.btn-buy:hover,
+.btn-buy:active,
+.btn-buy:focus {
+  letter-spacing: 0.125rem;
+  color: #ffa500;
+}
+
+/* $bg: #3c3c3c;
+$white: #fff;
+$black: #202121; */
+
+/* @mixin transition($property: all, $duration: 0.5s, $ease: cubic-bezier(0.65,-0.25,0.25, 1.95)) {
+  transition: $property $duration $ease;
+} */
+
+/* * {
+  box-sizing: border-box;
+  &::before, &::after {
+    box-sizing: border-box;
+  }
+} */
+/* 
+button {
+  &.learn-more {
+    @include transition(all, 0.5s, cubic-bezier(0.65, -0.25, 0.25, 1.95));
+    color: #202121;
+    padding: 1.25rem 2rem;
+    background: #fff;
+    &:hover,
+    &:focus,
+    &:active {
+      letter-spacing: 0.125rem;
+    }
+  }
+}
+
+@supports (display: grid) {
+  body {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 0.625rem;
+    grid-template-areas: '. main main .' '. main main .';
+  }
+
+  #container {
+    grid-area: main;
+    align-self: center;
+    justify-self: center;
+  }
+} */
