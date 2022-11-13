@@ -1,15 +1,15 @@
 /* 내부영어 */
 @font-face {
-  font-family: "Tenada";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/Tenada.woff2") format("woff2");
+  font-family: 'Tenada';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/Tenada.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
 
 /* 카테고리 */
 @font-face {
-  font-family: "Happiness-Sans-Title";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/Happiness-Sans-Title.woff2") format("woff2");
+  font-family: 'Happiness-Sans-Title';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/Happiness-Sans-Title.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
@@ -19,9 +19,108 @@
   padding: 0;
 }
 
-.container {
-  max-width: 1200px;
+/* 헤더 */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 86px;
+  border-bottom: 3px solid orange;
   background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  z-index: 100;
+}
+
+.header h1 {
+  font-weight: 700;
+  font-size: 50px;
+  position: relative;
+  font-family: 'Lobster';
+}
+
+.header h1 a {
+  color: orange;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* 버거바  */
+.header .sub_menu {
+}
+.header .sub_menu a {
+  font-size: 30px;
+  color: #392300;
+}
+
+.header .sub_menu a:hover {
+}
+
+.header .sub_menu a i {
+  margin-left: 20px;
+}
+
+/* 버거바 이름 */
+#offcanvasRight {
+  /* margin-top: 600px; */
+}
+
+#offcanvasRightLabel {
+  font-family: 'Lobster';
+  padding-top: 30px;
+  padding-left: 30px;
+  font-size: 60px;
+  font-weight: 700;
+  color: orange;
+}
+
+/* 버거바 내부 메뉴*/
+.offcanvas-header {
+}
+
+.offcanvas-body {
+  z-index: 2;
+}
+
+.burger-in {
+  font-family: 'Happiness-Sans-Title';
+  padding-top: 30px;
+  padding-left: 30px;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.burger-in a {
+  text-decoration: none;
+  display: inline-block;
+  height: 60px;
+  line-height: 60px;
+  padding: 0 10px;
+}
+
+.burger-in a {
+  color: #000;
+  position: relative;
+  text-decoration: none;
+}
+
+.burger-in a::before {
+  background: hsl(45 100% 70%);
+  content: '';
+  inset: 0;
+  position: absolute;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s ease-in-out;
+  z-index: -1;
+}
+
+.burger-in a:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 body {
@@ -30,6 +129,12 @@ body {
   justify-content: center;
   min-height: 100vh;
   background-color: #ffd490;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 form {
@@ -44,7 +149,7 @@ form {
 }
 
 form h2 {
-  font-family: "Tenada";
+  font-family: 'Tenada';
   color: orange;
   text-align: center;
   font-size: 2.5rem;
@@ -63,15 +168,15 @@ form input {
   width: 70%;
   border-radius: 40px;
   transition: 0.2s ease-in;
-  font-family: "Tenada";
+  font-family: 'Tenada';
 }
 
-form input[type="text"],
-form input[type="password"] {
+form input[type='text'],
+form input[type='password'] {
   border: solid 2px lightgrey;
 }
 
-form input[type="submit"] {
+form input[type='submit'] {
   border: solid 2px grey;
   box-sizing: border-box;
   height: 40px;
@@ -79,13 +184,13 @@ form input[type="submit"] {
   cursor: pointer;
 }
 
-form input[type="text"]:focus,
-form input[type="Password"]:focus {
+form input[type='text']:focus,
+form input[type='Password']:focus {
   width: 80%;
   border: solid 2px #ffd490;
 }
 
-form input[type="submit"]:hover {
+form input[type='submit']:hover {
   background: antiquewhite;
   color: goldenrod;
 }
