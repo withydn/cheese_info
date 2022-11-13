@@ -1,12 +1,137 @@
+/* 메인 */
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto+Condensed:ital@1&display=swap');
+
+/* 카테고리 */
+@font-face {
+  font-family: 'Happiness-Sans-Title';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/Happiness-Sans-Title.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 내부영어 */
+@font-face {
+  font-family: 'Tenada';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/Tenada.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 내부한글 */
 @font-face {
   font-family: 'Arita-buri-SemiBold';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Arita-buri-SemiBold.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
+
 body {
   background-color: #ffd490;
   font-family: 'Arita-buri-SemiBold';
+}
+
+/* 헤더 */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 86px;
+  border-bottom: 3px solid orange;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  z-index: 100;
+}
+
+.header h1 {
+  font-weight: 700;
+  font-size: 50px;
+  position: relative;
+  font-family: 'Lobster';
+}
+
+.header h1 a {
+  color: orange;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* 버거바  */
+.header .sub_menu {
+}
+.header .sub_menu a {
+  font-size: 30px;
+  color: #392300;
+}
+
+.header .sub_menu a:hover {
+}
+
+.header .sub_menu a i {
+  margin-left: 20px;
+}
+
+/* 버거바 이름 */
+#offcanvasRight {
+  /* margin-top: 600px; */
+}
+
+#offcanvasRightLabel {
+  font-family: 'Lobster';
+  padding-top: 30px;
+  padding-left: 30px;
+  font-size: 60px;
+  font-weight: 700;
+  color: orange;
+}
+
+/* 버거바 내부 메뉴*/
+.offcanvas-header {
+}
+
+.offcanvas-body {
+  z-index: 2;
+}
+
+.burger-in {
+  font-family: 'Happiness-Sans-Title';
+  padding-top: 30px;
+  padding-left: 30px;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.burger-in a {
+  text-decoration: none;
+  display: inline-block;
+  height: 60px;
+  line-height: 60px;
+  padding: 0 10px;
+}
+
+.burger-in a {
+  color: #000;
+  position: relative;
+  text-decoration: none;
+}
+
+.burger-in a::before {
+  background: hsl(45 100% 70%);
+  content: '';
+  inset: 0;
+  position: absolute;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s ease-in-out;
+  z-index: -1;
+}
+
+.burger-in a:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 .container {
@@ -18,129 +143,48 @@ body {
   background-color: #fffaf2;
 }
 
-/* .container main #about-cheese h2 {
-  font-size: 35px;
-  line-height: 32px;
-  color: olive;
-  text-align: center;
-  background-color: antiquewhite;
-  width: 300px;
-  height: 30px;
-  margin-top: 0%;
-} */
-
-/* .container main #about-cheese .cheese {
-   width: 50%; 
-  height: 100%;
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  margin-right: 30px;
-  margin-top: 30px;
-} */
-
-/* .container main #about-cheese .cheese .img-box {
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0.5rem;
-  padding: 0.5rem;
-}
-.container main #about-cheese .cheese .img-box img {
-  width: 100%;
-  border-radius: 8px;
-  margin: 0.5rem;
-}
-.container main #about-cheese .cheese .cheese2 {
-  border-radius: 8px;
-}
-.container main #about-cheese .cheese .cheese2 .content {
-  font-size: 17px;
-  font-weight: 600;
-  width: 100%;
-  letter-spacing: 1px;
-  word-spacing: 1px;
-}
-.container main #about-cheese .cheese .cheese2 .content ol {
-  position: relative;
-  top: 0px;
-  margin-left: 22px;
-  line-height: 30px;
-}
-.container main #about-cheese .cheese .cheese2 .content ol li {
-  position: relative;
-  padding-left: 15px;
-  width: 100%;
-  box-sizing: border-box;
-  margin-bottom: 0.5rem;
-} */
-/* .container main #about-cheese .cheese .cheese2 .content ol li:nth-child(5n + 1) {
-  color: burlywood;
-}
-.container main #about-cheese .cheese .cheese2 .content ol li:nth-child(5n + 2) {
-  color: orange;
-}
-.container main #about-cheese .cheese .cheese2 .content ol li:nth-child(5n + 3) {
-  color: brown;
-}
-.container main #about-cheese .cheese .cheese2 .content ol li:nth-child(5n + 4) {
-  color: goldenrod;
-}
-.container main #about-cheese .cheese .cheese2 .content ol li:nth-child(5n + 5) {
-  color: olive;
-} */
-
-/* 
-$font-serif: 'Playfair Display', serif;
-$font-sans: 'Quicksand', sans-serif; */
-
-/* // Colours.
-$colors: (#27ae60, #6d9eeb, #2980b9, #8e44ad, #c20e9b, #16a085); */
-
-header {
+.history-header {
   letter-spacing: 2px;
   margin-bottom: 20px;
   text-align: center;
 }
 
-header h1 {
+.history-header h1 {
   margin-top: 0;
 }
 
-main {
+.history {
   margin: 50px auto 0;
   max-width: 820px;
 }
 
-main .cat-one,
-main .cat-two,
-main .cat-three {
+.history .cat-one,
+.history .cat-two,
+.history .cat-three {
   max-width: 275px;
 }
 
-main .cat-one {
+.history .cat-one {
   clip-path: circle();
   float: left;
   shape-outside: circle(45%);
   transform: translate(-15%);
 }
 
-main .cat-two {
+.history .cat-two {
   clip-path: ellipse();
   float: right;
   shape-outside: ellipse(45%);
   transform: translate(15%);
 }
 
-main .cat-three {
+.history .cat-three {
   clip-path: circle();
   float: left;
   shape-outside: circle(45%);
   transform: translate(-15%);
 }
 
-main p {
+.history p {
   line-height: 1.6;
 }
