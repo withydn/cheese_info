@@ -22,6 +22,14 @@
     <link rel="stylesheet" href="./css/mainpage.css" />
   </head>
   <body>
+    <!-- 로딩 -->
+    <div class="loading-background">
+      <div class="loading" data-text="Cheese.in">
+        Cheese.in
+        <image class="hello" src="./images/이미지/hello.png" alt="cheese"></image>
+      </div>
+    </div>
+    <!-- 컨테이너박스 -->
     <div class="container-fluid">
       <!-- 헤더 -->
       <header class="header">
@@ -61,13 +69,13 @@
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="./images/carousel/치즈맨1.jpg" class="d-block w-100" alt="cheese" />
+              <img src="./images/carousel/치즈맨1.jpg" class="d-block w-100" alt="cheese" />
             </div>
             <div class="carousel-item">
-              <img src="./images/carousel/치즈맨21.jpg" class="d-block w-100" alt="cheese" />
+              <img src="./images/carousel/치즈맨20.jpg" class="d-block w-100" alt="cheese" />
             </div>
             <div class="carousel-item">
-              <img src="./images/이미지/carousel/carousel3.jpg" class="d-block w-100" alt="cheese" />
+              <img src="./images/carousel/치즈맨21.jpg" class="d-block w-100" alt="cheese" />
             </div>
           </div>
           <button
@@ -117,7 +125,7 @@
           <div class="news-container">
             <div class="news__item">
               <div class="card">
-                <img class="card__img" src="./images/news-section/tom.jpeg" />
+                <img class="card__img" src="./images/news-section/뉴스1.jpg" />
                 <div class="card__content">
                   <h1 class="card__header">쥐는 정말 치즈를 좋아할까?</h1>
                   <p class="card__text">
@@ -131,28 +139,28 @@
             </div>
             <div class="news__item">
               <div class="card">
-                <img class="card__img" src="./images/news-section/newscheese.jpeg" />
+                <img class="card__img" src="./images/news-section/뉴스2.jpeg" />
                 <div class="card__content">
                   <h1 class="card__header">건강에 이로운 치즈 4가지</h1>
                   <p class="card__text">
                     우유에 미생물이나 효소를 섞어 응고시킨 발효식품인 치즈. 치즈에는 단백질과 칼슘, 비타민 ...
                   </p>
                   <a target="_blank" href="https://www.hidoc.co.kr/healthstory/news/C0000744342" class="card__btn"
-                    >Explore <span>&rarr;</span></a
+                    >더보기 <span>&rarr;</span></a
                   >
                 </div>
               </div>
             </div>
             <div class="news__item">
               <div class="card">
-                <img class="card__img" src="./images/news-section/임실치즈파크.jpg" alt="Canyons" />
+                <img class="card__img" src="./images/news-section/뉴스3.jpg" alt="Canyons" />
                 <div class="card__content">
                   <h1 class="card__header">2022 대한민국 안심관광지 선정</h1>
                   <p class="card__text">
                     이번에 안심관광지로 선정된 임실치즈테마파크는 대한민국 임실치즈의 맛과 멋을 ...
                   </p>
                   <a target="_blank" href="https://www.kukinews.com/newsView/kuk202207120063" class="card__btn"
-                    >Explore <span>&rarr;</span></a
+                    >더보기 <span>&rarr;</span></a
                   >
                 </div>
               </div>
@@ -166,10 +174,10 @@
             <div class="card">
               <div class="content">
                 <div class="imgBx">
-                  <img src="./images/almond.jpeg" />
+                  <img src="./images/이미지/베스트리뷰/리뷰1.jpg" />
                 </div>
                 <div class="contentBx">
-                  <h3>Lion</h3>
+                  <h3>에멘탈치즈</h3>
                 </div>
               </div>
               <div class="sci">앞으로 이 치즈는 제껍니다.<br />맛있고 저렴합니다!<br />항상 여기서 믿고 구매해요~</div>
@@ -177,10 +185,10 @@
             <div class="card">
               <div class="content">
                 <div class="imgBx">
-                  <img src="./images/almond.jpeg" />
+                  <img src="./images/이미지/베스트리뷰/리뷰2.jpg" />
                 </div>
                 <div class="contentBx">
-                  <h3>Frog</h3>
+                  <h3>모짜렐라</h3>
                 </div>
               </div>
               <div class="sci">
@@ -191,10 +199,10 @@
             <div class="card">
               <div class="content">
                 <div class="imgBx">
-                  <img src="./images/almond.jpeg" />
+                  <img src="./images/이미지/베스트리뷰/리뷰3.jpg" />
                 </div>
                 <div class="contentBx">
-                  <h3>Giraffe</h3>
+                  <h3>살구아몬드 치즈</h3>
                 </div>
               </div>
 
@@ -221,5 +229,15 @@
         <div class="footer-copy">Copyright©Cheese.in</div>
       </footer>
     </div>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+      window.onbeforeunload = function () {
+        $(".loading").show();
+      };
+      $(window).on("load", function () {
+        $(".loading-background").delay(2000).fadeOut();
+        $(".loading").delay(2000).fadeOut();
+      });
+    </script>
   </body>
 </html>

@@ -10,17 +10,35 @@
   </head>
   <body>
     <div id="container">
-      <header>
-        <nav class="navbar">
-          <div class="navbar_logo">
-            <a href="#">cheese.in <i class="fa-solid fa-location-dot"></i></a>
+      <header class="header">
+        <h1>
+          <a href="./mainpage.html">Cheese.in</a>
+        </h1>
+        <!-- 헤더  버거바-->
+        <div class="sub_menu">
+          <a href="#" onclick="return false"
+            ><i
+              class="fa-solid fa-bars"
+              style="color: orange"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasRight"
+              aria-controls="offcanvasRight"
+            ></i
+          ></a>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasRightLabel">Cheese.in</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <div class="burger-in"><a href="./login.html">로그인</a></div>
+              <div class="burger-in"><a href="./buypage.html">판매페이지</a></div>
+              <div class="burger-in"><a href="./history.html">치즈의 역사</a></div>
+              <div class="burger-in"><a href="./store.html">치즈맛집</a></div>
+              <div class="burger-in"><a href="./cartPage.html">장바구니</a></div>
+            </div>
           </div>
-
-          <ul class="icon">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <i class="fa-solid fa-cart-shopping"></i>
-          </ul>
-        </nav>
+        </div>
       </header>
       <main>
         <div class="place">
