@@ -5,13 +5,23 @@ const createList = (item) => {
   const itemBox = document.querySelector('.item-box');
   const tr = document.createElement('tr');
   tr.setAttribute('id', `${item.id}`);
+  tr.classList.add('cartItem');
   tr.innerHTML = `
-    <td class="title">${item.title}</td>
-    <td class="quantity">${item.quantity}</td>
+    <td class="title">${item.title} 치즈</td>
+    <td class="quantity">
+    <i class="fa-regular fa-square-minus btn-minus"></i>
+    <span>${item.quantity}</span>
+    <i class="fa-regular fa-square-plus btn-plus"></i>
+    </td>
     <td><span class="price">${item.price}</span></td>
     <td><i data-id=${item.id} class="fa-solid fa-trash-can close-container"></i></td>
   `;
   itemBox.appendChild(tr);
+
+  addItemClick();
+  minusItemClick();
+  removeItem();
+  getTotalPrice();
 };
 
 // element 제거
@@ -23,16 +33,15 @@ const deleteList = (selectedId) => {
 
 // empty list
 const createEmptyList = () => {
-  const totalElement = document.querySelector('.total-price');
+  const totalPrice = document.querySelector('.total-price');
   const itemBox = document.querySelector('.item-box');
-  itemBox.innerHTML = ``;
-  totalElement.textContent = `0 원`;
+  const cartItems = document.querySelectorAll('.cartItem');
+  cartItems.forEach((cartItem) => itemBox.removeChild(cartItem));
 };
 
 // 카트리스트 보여주기
 const renderCartList = () => {
   const getStoredItems = JSON.parse(localStorage.getItem('cart'));
-
   if (getStoredItems === null) {
     createEmptyList();
   } else {
@@ -67,6 +76,7 @@ const buttonBuyClick = () => {
       alert('구매완료');
       localStorage.setItem('cart', null);
       renderCartList();
+      getTotalPrice();
     }
   });
 };
@@ -102,9 +112,61 @@ const createOrderDate = () => {
   orderDate.textContent = `${currentMonth} / ${currentDate} / ${currentYear}`;
 };
 
+// couter
+const addItemClick = () => {
+  const btnPlus = document.querySelectorAll('.btn-plus');
+  btnPlus.forEach((btn) => {
+    btn.onclick = (e) => {
+      const dataId = e.target.closest('tr').id;
+      const storedItems = JSON.parse(localStorage.getItem('cart'));
+
+      const itemList = storedItems.map((storedItem) => {
+        if (storedItem.id === Number(dataId)) {
+          return {
+            ...storedItem,
+            quantity: storedItem.quantity + 1,
+          };
+        } else {
+          return storedItem;
+        }
+      });
+      localStorage.setItem('cart', JSON.stringify(itemList));
+      createEmptyList();
+      renderCartList();
+    };
+  });
+};
+
+const minusItemClick = () => {
+  const btnPlus = document.querySelectorAll('.btn-minus');
+  btnPlus.forEach((btn) => {
+    btn.onclick = (e) => {
+      const dataId = e.target.closest('tr').id;
+      const storedItems = JSON.parse(localStorage.getItem('cart'));
+
+      const itemList = storedItems.map((storedItem) => {
+        if (storedItem.id === Number(dataId)) {
+          if (storedItem.quantity - 1 === 0) {
+            return storedItem;
+          }
+          return {
+            ...storedItem,
+            quantity: storedItem.quantity - 1,
+          };
+        } else {
+          return storedItem;
+        }
+      });
+
+      localStorage.setItem('cart', JSON.stringify(itemList));
+      createEmptyList();
+      renderCartList();
+    };
+  });
+};
+
 //실행
+createOrderDate();
 renderCartList();
 getTotalPrice();
 buttonBuyClick();
-createOrderDate();
-removeItem();

@@ -72,17 +72,6 @@ ul {
   text-decoration: none;
 }
 
-.header .sns {
-  display: flex;
-  margin-top: 20px;
-  margin-inline-start: auto;
-}
-
-.header .sns li a {
-  font-size: 30px;
-  color: orange;
-}
-
 /* 버거바  */
 .header .sub_menu {
 }
@@ -178,7 +167,7 @@ body {
 
 .receipt_wrap {
   background-color: #fffaf2;
-  width: 700px;
+  max-width: 700px;
   padding: 50px;
   position: relative;
   margin: 86px auto;
@@ -249,6 +238,13 @@ main i {
 .reciept-footer .total h2 {
   font-size: 3vw;
 }
+
+@media (max-width: 1000px) {
+  .reciept-footer .total h2 {
+    font-size: 4vw;
+  }
+}
+
 .reciept-footer .total dt {
   width: 40%;
   text-align: right;
@@ -285,47 +281,3 @@ main i {
   letter-spacing: 0.125rem;
   color: #ffa500;
 }
-
-/* $bg: #3c3c3c;
-$white: #fff;
-$black: #202121; */
-
-/* @mixin transition($property: all, $duration: 0.5s, $ease: cubic-bezier(0.65,-0.25,0.25, 1.95)) {
-  transition: $property $duration $ease;
-} */
-
-/* * {
-  box-sizing: border-box;
-  &::before, &::after {
-    box-sizing: border-box;
-  }
-} */
-/* 
-button {
-  &.learn-more {
-    @include transition(all, 0.5s, cubic-bezier(0.65, -0.25, 0.25, 1.95));
-    color: #202121;
-    padding: 1.25rem 2rem;
-    background: #fff;
-    &:hover,
-    &:focus,
-    &:active {
-      letter-spacing: 0.125rem;
-    }
-  }
-}
-
-@supports (display: grid) {
-  body {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 0.625rem;
-    grid-template-areas: '. main main .' '. main main .';
-  }
-
-  #container {
-    grid-area: main;
-    align-self: center;
-    justify-self: center;
-  }
-} */

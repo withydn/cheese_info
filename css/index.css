@@ -250,9 +250,9 @@ main {
 }
 
 .about-title {
-  font-size: 4em;
+  font-size: 64px;
   margin: 0 0 1rem;
-  font-family: serif;
+  font-family: 'Tenada';
   position: relative;
 }
 .about-title::after {
@@ -281,6 +281,8 @@ main {
   }
 }
 .content-text {
+  font-family: 'Arita-buri-SemiBold';
+  font-size: 20px;
   margin-top: 0;
   margin-bottom: var(--box-y-padding);
   line-height: 1.5;
@@ -307,7 +309,8 @@ main {
 }
 
 .news-title {
-  margin: 25px 0;
+  font-family: 'Tenada';
+  font-size: 64px;
 }
 
 .news-container {
@@ -352,17 +355,19 @@ main {
 }
 
 .card__header {
-  font-size: 28px;
-  font-weight: 500;
-  color: #0d0d0d;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: 'Arita-buri-SemiBold';
 }
 
 .card__text {
+  font-family: 'Arita-buri-SemiBold';
   font-size: 18px;
 }
 
 .card__btn {
   display: block;
+  font-family: 'Arita-buri-SemiBold';
   width: 100%;
   padding: 10px 16px;
   text-align: center;
@@ -400,7 +405,8 @@ main {
 }
 
 .review-title {
-  margin: 25px 0;
+  font-family: 'Tenada';
+  font-size: 64px;
   z-index: 10;
 }
 
@@ -436,7 +442,7 @@ main {
   margin: 40px auto;
 }
 
-.review-container .card {
+.review-container .review-card {
   position: relative;
   width: 300px;
   height: 400px;
@@ -450,7 +456,7 @@ main {
   backdrop-filter: blur(10px);
 }
 
-.review-container .card .content {
+.review-container .review-card .content {
   position: relative;
 
   display: flex;
@@ -460,18 +466,18 @@ main {
   transition: 0.5s;
 }
 
-.review-container .card:hover .content {
+.review-container .review-card:hover .content {
   transform: translateY(-20px);
 }
 
-.review-container .card .content .imgBx {
+.review-container .review-card .content .imgBx {
   position: relative;
   width: 150px;
   height: 150px;
   overflow: hidden;
 }
 
-.review-container .card .content .imgBx img {
+.review-container .review-card .content .imgBx img {
   position: absolute;
   top: 0;
   left: 0;
@@ -480,7 +486,12 @@ main {
   object-fit: cover;
 }
 
-.review-container .card .content .contentBx h3 {
+.review-container .review-card .content .contentBx {
+  font-family: 'Arita-buri-SemiBold';
+  font-size: 24px;
+}
+
+.review-container .review-card .content .contentBx h3 {
   color: black;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -491,14 +502,16 @@ main {
   line-height: 1.1em;
 }
 
-.review-container .card .content .contentBx h3 span {
+.review-container .review-card .content .contentBx h3 span {
   font-size: 12px;
   font-weight: 300;
   text-transform: initial;
 }
 
-.review-container .card .sci {
+.review-container .review-card .sci {
   position: absolute;
+  font-family: 'Arita-buri-SemiBold';
+  font-size: 18px;
   bottom: 50px;
   max-width: 280px;
   margin: 0 10px;
@@ -508,9 +521,10 @@ main {
   text-align: left;
 }
 
-.review-container .card:hover .sci {
+.review-container .review-card:hover .sci {
   color: black;
-  font-size: 16px;
+  position: absolute;
+  font-family: 'Arita-buri-SemiBold';
   transform: translateY(0px);
   opacity: 1;
   text-align: left;
@@ -520,10 +534,11 @@ main {
 
 footer {
   position: relative;
+  font-family: 'Arita-buri-SemiBold';
+  font-size: 22px;
   width: 100%;
   height: 300px;
   background-color: #ffd490;
-  color: #555;
   font-size: 20px;
   font-weight: 700;
   padding: 30px;
